@@ -1,0 +1,24 @@
+<a ui-sref="newPerson" class="btn-primary btn-lg nodecoration">Add New Person</a>
+<h3>All Persons</h3>
+<table class="table persontable" style="margin-top: 25px">
+    <thead>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Hobbies</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="person in persons">
+            <td>{{person.name}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="hobby in person.hobbies">{{hobby.name}}</li>
+                </ul>
+            </td>
+            <td>
+                <a class="btn btn-primary" ui-sref="viewPerson({id:person.id})">View</a>
+                <a class="btn btn-danger"  ng-click="deletePerson(person)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>

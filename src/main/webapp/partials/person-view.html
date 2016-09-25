@@ -1,0 +1,22 @@
+<table class="table persontable">
+    <tr>
+        <td><h3>Details for {{person.name}}</h3></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Person Name</td>
+        <td>{{person.name}}</td>
+    </tr>
+    <tr>
+        <td>Hobbies</td>
+        <td>
+            <ul ng-repeat="hobby in person.hobbies">
+                <li>{{hobby.name}}</li>
+            </ul>
+        </td>
+    </tr>
+</table>
+<div>
+    <a class="btn btn-danger" ui-sref="persons()">Back</a>
+    <a class="btn btn-primary" ui-sref="editPerson({id:person.id})">Edit</a>
+</div>

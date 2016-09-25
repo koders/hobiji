@@ -1,0 +1,22 @@
+<div class="form-group" xmlns="http://www.w3.org/1999/html">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+        <input type="text" ng-model="person.name" class="form-control" id="name" placeholder="Person Name Here"/>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="checkboxes">Hobbies</label>
+    <div class="col-sm-10" id="hobbies">
+        <div ng-repeat="hobby in checkedHobbies">
+            <input type="checkbox" id="{{hobby.name}}" ng-model="hobby.checked" name="checkboxes">
+            <label for="{{hobby.name}}">{{hobby.name}}</label>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <a class="btn btn-danger" ui-sref="persons()">Back</a>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+</div>

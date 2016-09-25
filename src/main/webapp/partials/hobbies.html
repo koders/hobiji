@@ -1,0 +1,24 @@
+<a ui-sref="newHobby" class="btn-primary btn-lg nodecoration">Add New Hobby</a>
+<h3>All Hobbies</h3>
+<table class="table hobbytable" style="margin-top: 25px">
+    <thead>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Persons</strong></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="hobby in hobbies">
+            <td>{{hobby.name}}</td>
+            <td>
+                <ul>
+                    <li ng-repeat="person in hobby.persons">{{person.name}}</li>
+                </ul>
+            </td>
+            <td>
+                <!--<a class="btn btn-primary" ui-sref="viewHobby({id:hobby.id})">View</a>-->
+                <a class="btn btn-danger"  ng-click="deleteHobby(hobby)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
